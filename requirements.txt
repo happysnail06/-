@@ -1,0 +1,11 @@
+#python 3.10 환경
+faiss-cpu
+numpy
+transformers
+torch
+fastapi
+uvicorn
+ragas
+nltk
+datasets
+
