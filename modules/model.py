@@ -1,10 +1,13 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
+from huggingface_hub import snapshot_download
 
 class ModelHandler:
     def __init__(self):
-        self.tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen2-0.5B")
-        self.model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen2-0.5B")
+        model_name = "BioMistral/BioMistral-7B-AWQ-QGS128-W4-GEMM"
+        # model_path = snapshot_download(repo_id=model_name)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.model = AutoModelForCausalLM.from_pretrained(model_name)
         
         if self.tokenizer.eos_token is None:
             self.tokenizer.add_special_tokens({'eos_token': '<|endoftext|>'})

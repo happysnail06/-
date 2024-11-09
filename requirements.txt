@@ -8,4 +8,7 @@ uvicorn
 ragas
 nltk
 datasets
-
+llama_index
+langchain
+openai
+sentence_transformers

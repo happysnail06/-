@@ -6,4 +6,5 @@ torch
 ragas
 nltk
 datasets
+bitsandbytes
 
